@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Amazon Clone',
       theme: ThemeData(
-        scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+        scaffoldBackgroundColor: GlobalVariables.greyBackgroundCOlor,
         appBarTheme: const AppBarTheme(
           elevation: 0,
           iconTheme: IconThemeData(
@@ -34,28 +34,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: (routeSettings) => generateRoute(routeSettings),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello'),
-        ),
-        body: Builder(builder: (context) {
-          return Column(
-            children: [
-              const Center(
-                child: Text('Somethings'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, AuthScreen.routeName);
-                },
-                child: const Text(
-                  'Click',
-                ),
-              ),
-            ],
-          );
-        }),
-      ),
+      home: const AuthScreen(),
     );
   }
 }
